@@ -21,10 +21,10 @@ def main():
 	global cutoff, dimensions, dataset, num_clusters, data
 	
 	if rank == 0:
-		print "Enter the number of clusters you want to make:"
+		print("Enter the number of clusters you want to make:")
 		num_clusters = raw_input()
 		num_clusters = int(num_clusters)
-		with open('test.csv', 'rb') as f:
+		with open('modified_video_game_sales.csv', 'rb') as f:
 			reader = csv.reader(f)
 			dataset = list(reader)
 		initial = []
@@ -80,11 +80,11 @@ def main():
 					flag += 1
 			if flag == 0:
 				compare_cutoff = False
-				print nfc
+				print(nfc)
 				compare_cutoff = comm.bcast(compare_cutoff, root = 0)
-				print fc			
+				print (fc)
 				print ("Execution time %s seconds" % (time.time() - start_time))
-				print loop
+				print (loop)
 			else:
 				initial = nfc
 	MPI.Finalize()		

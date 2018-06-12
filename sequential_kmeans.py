@@ -90,7 +90,7 @@ def main():
 	print "Enter the number of clusters you want to make:"
 	num_clusters = raw_input()
 	num_clusters = int(num_clusters)
-	with open('modified.csv', 'rb') as f:
+	with open('modified_video_game_sales.csv', 'rb') as f:
 		reader = csv.reader(f)
 		dataset = list(reader)
 	data = dataset
